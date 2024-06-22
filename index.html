@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Template</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .bg-dark {
+            background-color: #1e1e1e;
+        }
+        .text-primary {
+            color: #1e90ff;
+        }
+    </style>
+</head>
+<body class="bg-dark">
+
+    <header class="bg-gray-800 text-white p-6">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-bold">Project Title</h1>
+        </div>
+    </header>
+
+    <main class="container mx-auto my-10">
+        <section class="bg-gray-900 p-6 rounded-lg shadow-lg">
+            <h2 class="text-2xl font-bold mb-4 text-primary">Project Overview</h2>
+            <p class="mb-4">Project description goes here.</p>
+            <button id="view-repo" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">View GitHub Repository</button>
+        </section>
+
+        <section class="mt-10">
+            <h2 class="text-2xl font-bold mb-4 text-primary">Team Members</h2>
+            <ul class="bg-gray-900 p-6 rounded-lg shadow-lg space-y-4">
+                <li class="p-4 bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-xl font-bold mb-2">Leela</h3>
+                    <p>Role and contributions.</p>
+                </li>
+                <li class="p-4 bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-xl font-bold mb-2">Subhang</h3>
+                    <p>Role and contributions.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="mt-10">
+            <h2 class="text-2xl font-bold mb-4 text-primary">Technologies Used</h2>
+            <ul class="bg-gray-900 p-6 rounded-lg shadow-lg space-y-4">
+                <li class="p-4 bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-xl font-bold mb-2">Technology 1</h3>
+                    <p>Description of technology 1.</p>
+                </li>
+                <li class="p-4 bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-xl font-bold mb-2">Technology 2</h3>
+                    <p>Description of technology 2.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="mt-10">
+            <h2 class="text-2xl font-bold mb-4 text-primary">Future Implementations</h2>
+            <ul class="bg-gray-900 p-6 rounded-lg shadow-lg space-y-4">
+                <li class="p-4 bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-xl font-bold mb-2">Feature 1</h3>
+                    <p>Details about future feature 1.</p>
+                </li>
+                <li class="p-4 bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-xl font-bold mb-2">Feature 2</h3>
+                    <p>Details about future feature 2.</p>
+                </li>
+                <li class="p-4 bg-gray-800 rounded-lg shadow">
+                    <h3 class="text-xl font-bold mb-2">Feature 3</h3>
+                    <p>Details about future feature 3.</p>
+                </li>
+            </ul>
+        </section>
+
+        <section class="mt-10">
+            <h2 class="text-2xl font-bold mb-4 text-primary">Upcoming Projects</h2>
+            <ul id="projects-list" class="bg-gray-900 p-6 rounded-lg shadow-lg space-y-4">
+                <!-- Upcoming projects will be inserted here by JavaScript -->
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white p-6 mt-10">
+        <div class="container mx-auto">
+            <h2 class="text-2xl font-bold mb-4 text-primary">Contact Us</h2>
+            <form class="bg-gray-900 p-6 rounded-lg shadow-lg space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-bold mb-2">Name:</label>
+                    <input type="text" id="name" class="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700">
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-bold mb-2">Email:</label>
+                    <input type="email" id="email" class="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700">
+                </div>
+                <div>
+                    <label for="message" class="block text-sm font-bold mb-2">Message:</label>
+                    <textarea id="message" class="w-full p-2 rounded-lg bg-gray-800 text-white border border-gray-700" rows="4"></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-lg hover:bg-blue-700">Send</button>
+            </form>
+            <p class="text-center mt-4">© 2024 Leela and Subhang. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('view-repo').addEventListener('click', function() {
+            window.open('https://github.com/yourusername/yourrepository', '_blank');
+        });
+
+        const upcomingProjects = [
+            { title: 'Next Project 1', description: 'Description of the next project 1.' },
+            { title: 'Next Project 2', description: 'Description of the next project 2.' },
+            { title: 'Next Project 3', description: 'Description of the next project 3.' }
+        ];
+
+        const projectsList = document.getElementById('projects-list');
+
+        upcomingProjects.forEach(project => {
+            const projectItem = document.createElement('li');
+            projectItem.className = 'p-4 bg-gray-800 rounded-lg shadow';
+            projectItem.innerHTML = `
+                <h3 class="text-xl font-bold mb-2">${project.title}</h3>
+                <p>${project.description}</p>
+            `;
+            projectsList.appendChild(projectItem);
+        });
+    </script>
+
+</body>
+</html>
